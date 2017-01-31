@@ -1,0 +1,15 @@
+
+<h1>Bellow is the list of the product you are loking for </h1>
+<h2> <%=@products.name%></h2>
+  <p> <b> Description:</b>b> <%=@products.description%></p>
+  <p><b> Price: </b> <%=@products.price%></p>
+  <p> <b> Supplier Name </b> <%=@products.supplier.name%></p>
+  <h2> <img src="<%= @products.image %>"></h2>
+
+  <%= form_tag "/products/#{@products.id}", method: :delete do %>
+  <input type="submit" value="Destroy Product">
+
+  <% end %>
+<%= button_to "Edit", "/products/#{@products.id}/edit", method: :get %>
+<%= button_to "Delete", "/products/#{@products.id}", method: :delete %>
+
