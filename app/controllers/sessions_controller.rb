@@ -20,6 +20,4 @@ class SessionsController < ApplicationController
       flash[:success] = 'Successfully logged out!'
       redirect_to 'login'
     end
-
-    def delete
 end
