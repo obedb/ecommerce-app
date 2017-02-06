@@ -1,4 +1,4 @@
 class CategoryProduct < ApplicationRecord
-  belongs_to :Category
-  belongs_to :category 
+  belongs_to :category, optional: true
+  belongs_to :product, optional: true 
 end
