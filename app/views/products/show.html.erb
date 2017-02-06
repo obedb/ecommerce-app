@@ -13,3 +13,13 @@
 <%= button_to "Edit", "/products/#{@products.id}/edit", method: :get %>
 <%= button_to "Delete", "/products/#{@products.id}", method: :delete %>
 
+<%= form_tag "/orders", method: :post do %>
+<div> Quantity <input type="number" name="quantity"></div>
+<div> Product Id <input type="number" name="id"></div>
+<div> Subtotal <input type="number" name="subtotal"></div>
+<div><input type="submit" value="Buy Now"></input></div>
+
+<% end %>
+
+
+

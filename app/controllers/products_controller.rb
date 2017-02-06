@@ -7,7 +7,11 @@ class ProductsController < ApplicationController
     elsif params[:filter] = "discount"  
       @products = Product.where("price > ?", 200)
     elsif params[:random] = "random"
-      @products = Product.find_by(id: "random")        
+      @products = Product.find_by(id: "random")   
+
+      elsif params[:category]
+        @products = Category.find_by(name: params[:category]).products
+                  
     else
       @products = Product.all
     end
@@ -22,8 +26,8 @@ class ProductsController < ApplicationController
           
     @products = Product.find_by(id: params[:id])
     render "show.html.erb"
-  # end 
-end 
+  
+  end 
 
   def new
     render "new.html.erb"
